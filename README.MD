@@ -14,7 +14,7 @@ Essa API foi desenvolvida para contar quantas vezes uma palavra específica apar
 ##### Copiar código
 
 ````Clone o repositório:
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://git@github.com:Marllon-Wendel2/countWords.git
 ````
 #### Navegue até o diretório do projeto:
 ````
