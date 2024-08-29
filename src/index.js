@@ -1,16 +1,7 @@
-import * as fs from 'fs';
-import test from 'node:test';
+import { Console } from 'console';
+import cli from './cli.js';
 
-fs.readFile('./texto-web.txt', 'utf-8', (err, conteudo) => {
-    try {
-    if(err) {
-        console.log("O erro é:", err)
-        return
-    }
-    console.log(countWord(conteudo)) } catch (erro) {
-        
-    }
-});
+cli()
 
 function countWord(text) {
     const pars = breakPar(text)
@@ -43,6 +34,10 @@ function verifyWords(text) {
 
 function clearWords(word) {
     return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+}
+
+export {
+    countWord
 }
 
 //verifyWords(conteudo);
