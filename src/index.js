@@ -1,24 +1,29 @@
 import * as fs from 'fs';
 import test from 'node:test';
 
-// fs.readFile('./texto-web.txt', 'utf-8', (erro, data) => {
-//     console.log(data)
-// });
+fs.readFile('./texto-web.txt', 'utf-8', (err, conteudo) => {
+    try {
+    if(err) {
+        console.log("O erro é:", err)
+        return
+    }
+    console.log(countWord(conteudo)) } catch (erro) {
+        
+    }
+});
 
-const conteudo = fs.readFileSync('./texto-web.txt', 'utf-8');
-
-function breakPar(text) {
-    const pars = text.toLowerCase().split("\n")
+function countWord(text) {
+    const pars = breakPar(text)
     const count =  pars.flatMap((par) => {
         if(!par) return []
         return verifyWords(par)
     })
 
-
-        // .filter((par) => par)
-        // .map((par) => {
-    //})
     return count
+}
+
+function breakPar(text) {
+    return text.toLowerCase().split("\n")
 }
 
 function verifyWords(text) {
@@ -41,4 +46,4 @@ function clearWords(word) {
 }
 
 //verifyWords(conteudo);
-console.log(breakPar(conteudo))
+// console.log(countWord(conteudo))
