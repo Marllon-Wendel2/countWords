@@ -1,7 +1,5 @@
 import { Console } from 'console';
-import cli from './cli.js';
-
-cli()
+import { processFile } from './cli.js';
 
 function countWord(text) {
     const pars = breakPar(text)
